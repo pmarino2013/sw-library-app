@@ -11,6 +11,7 @@ const SwLibraryApp = () => {
       <h1>Datos de SW</h1>
 
       <PersonajeGrid setDatos={setDatos} setLoader={setLoader} />
+
       {loader ? "Cargando..." : <GridItems datos={datos} />}
     </>
   );
