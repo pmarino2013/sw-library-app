@@ -1,17 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import { getPeople } from "../helpers/getDataPeople";
-
-const PersonajeGrid = ({ setDatos, setLoader }) => {
-  const [people, setPeople] = useState("Skywalker");
+const PersonajeGrid = ({ setPeople }) => {
   const [inputValue, setInputValue] = useState("");
-
-  useEffect(() => {
-    getPeople(people).then((data) => {
-      setDatos(data);
-      setLoader(false);
-    });
-  }, [people]);
 
   const handleChance = (e) => {
     setInputValue(e.target.value);
@@ -19,9 +9,6 @@ const PersonajeGrid = ({ setDatos, setLoader }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    setDatos([]);
-    setLoader(true);
 
     if (inputValue.length >= 2) {
       setPeople(inputValue);
