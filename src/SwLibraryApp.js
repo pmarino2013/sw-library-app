@@ -4,6 +4,8 @@ import { useGetAxios } from "./hooks/useGetAxios";
 import PersonajeGrid from "./components/personajeGrid";
 import GridItems from "./components/gridItems";
 
+import { Container, Row, Col } from "reactstrap";
+
 const SwLibraryApp = () => {
   const [people, setPeople] = useState("Skywalker");
 
@@ -11,11 +13,21 @@ const SwLibraryApp = () => {
 
   return (
     <>
-      <h1>Datos de SW</h1>
-
-      <PersonajeGrid setPeople={setPeople} />
-
-      {loading ? "Cargando..." : <GridItems datos={data} />}
+      <Container>
+        <h1>Datos de SW</h1>
+        <Row>
+          <PersonajeGrid setPeople={setPeople} />
+        </Row>
+        <Row>
+          {loading ? (
+            "Cargando..."
+          ) : (
+            <ul>
+              <GridItems datos={data} />
+            </ul>
+          )}
+        </Row>
+      </Container>
     </>
   );
 };
