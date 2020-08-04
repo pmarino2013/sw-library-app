@@ -7,7 +7,7 @@ export const getPeople = async (people) => {
     `https://swapi.dev/api/people/?search=${encodeURI(people)}`
   );
   try {
-    console.log(data.data);
+    // console.log(data.data);
     return data.data.results;
   } catch (error) {
     console.error(error);
