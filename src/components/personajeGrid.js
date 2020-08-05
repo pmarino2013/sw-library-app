@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Form, Input, Label, FormGroup } from "reactstrap";
+import { Form, Input, FormGroup } from "reactstrap";
 
 const PersonajeGrid = ({ setPeople }) => {
   const [inputValue, setInputValue] = useState("");
@@ -14,8 +14,11 @@ const PersonajeGrid = ({ setPeople }) => {
 
     if (inputValue.length >= 2) {
       setPeople(inputValue);
-      setInputValue("");
     }
+  };
+
+  const handleClear = () => {
+    setInputValue("");
   };
 
   return (
@@ -23,7 +26,12 @@ const PersonajeGrid = ({ setPeople }) => {
       <h1>Hola mundo</h1>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Input type="text" value={inputValue} onChange={handleChance} />
+          <Input
+            type="text"
+            value={inputValue}
+            onChange={handleChance}
+            onClick={handleClear}
+          />
         </FormGroup>
       </Form>
       {/* <form onSubmit={handleSubmit}>

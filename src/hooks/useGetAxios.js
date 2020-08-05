@@ -8,6 +8,7 @@ export const useGetAxios = (people) => {
   });
 
   useEffect(() => {
+    setEstado({ loading: true });
     getPeople(people).then((data) => {
       setEstado({
         data: data,
