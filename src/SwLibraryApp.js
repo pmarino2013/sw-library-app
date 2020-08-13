@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useGetAxios } from "./hooks/useGetAxios";
 import PersonajeGrid from "./components/personajeGrid";
 import GridItems from "./components/gridItems";
+import Loader from "./components/loader";
 
 import Logo from "./img/logo2.png";
 import { Container, Row, Col } from "reactstrap";
@@ -32,16 +33,7 @@ const SwLibraryApp = () => {
         <Row>
           <Col sm="12" md={{ size: 6, offset: 3 }} className="texto">
             {loading ? (
-              <div id="floatingBarsG">
-                <div className="blockG" id="rotateG_01"></div>
-                <div className="blockG" id="rotateG_02"></div>
-                <div className="blockG" id="rotateG_03"></div>
-                <div className="blockG" id="rotateG_04"></div>
-                <div className="blockG" id="rotateG_05"></div>
-                <div className="blockG" id="rotateG_06"></div>
-                <div className="blockG" id="rotateG_07"></div>
-                <div className="blockG" id="rotateG_08"></div>
-              </div>
+              <Loader />
             ) : (
               <ul>
                 <GridItems datos={data} />

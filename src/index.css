@@ -29,3 +29,17 @@ ul {
   list-style: none;
   padding: 0;
 }
+
+#card {
+  margin-bottom: 20px;
+}
+#card h3 {
+  color: black;
+}
+#card p {
+  color: grey;
+}
+
+#colapse h3 {
+  color: #157b19;
+}
